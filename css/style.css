@@ -18,11 +18,13 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (min-width: 768px) {
-  main {
-    /* tablet - two column display */
-    grid-template-rows: 50px auto 30px;
-  }
+body {
+  display: grid;
+  background-color: gray;
+  /* Use a system font, if none are available use an available sans-sarif font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
 }
 
 
@@ -33,26 +35,57 @@ main {
   justify-content: center;
   align-items: center;
   background-color: white;
-  padding: 50px
-  margin: 0;
+  min-height: 100vh;
+  font-size: 2.4rem;
+
 }
+
 
 
 img {
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
+  border: solid;
+  border-color: green;
+}
+
+
+#name {
+grid-area: "header";
+}
+
+#occupation {
+  background-color: lightgrey;
+  grid-area: "content";
 }
 
 #brand {
   display: none;
+  grid-area: "content";
 }
 
 #offer {
-  background-color: green
+grid-area: "footer";
 }
 
 #contact {
   background-color: green;
+  grid-area: "aside";
+}
+
+
+@media only screen and (min-width: 768px) {
+  main {
+    display: grid;
+    /* tablet - two column display */
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 10px auto 50px 50px;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer"
+    "aside";
+  }
 }
 
