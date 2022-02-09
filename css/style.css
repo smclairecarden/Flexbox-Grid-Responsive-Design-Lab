@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+  
+}
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    /* tablet - two column display */
+    grid-template-rows: 50px auto 30px;
+  }
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 50px
+  margin: 0;
+}
+
+
+img {
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#brand {
+  display: none;
+}
+
+#offer {
+  background-color: green
+}
+
+#contact {
+  background-color: green;
+}
+
