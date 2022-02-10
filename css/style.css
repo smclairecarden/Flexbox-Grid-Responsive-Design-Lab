@@ -18,74 +18,162 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (min-width: 600px) {
+
 body {
   display: grid;
   background-color: gray;
+  min-height: 100vh;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  margin: 0;
 }
+
 
 
 main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   text-align: center;
+  background-color: whitesmoke;
+  min-width: 100vh;
+  font-size: 2.4rem;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  min-height: 100vh;
-  font-size: 2.4rem;
-
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+  "status name"
+  "img occupation"
+  "img brand"
+  "contact offer"
 }
-
-
 
 img {
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  border: solid;
-  border-color: green;
-}
-
-
-#name {
-grid-area: "header";
-}
-
-#occupation {
-  background-color: lightgrey;
-  grid-area: "content";
-}
-
-#brand {
-  display: none;
-  grid-area: "content";
-}
-
-#offer {
-grid-area: "footer";
+grid-area: img;
+margin-left: auto;
+margin-right: auto;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+border: solid;
+border-color: green;
+width: 100%;
 }
 
 #contact {
+  display: flex;
+  margin: 0;
+  padding: 0;
   background-color: green;
-  grid-area: "aside";
+  flex-direction: row;
+  justify-content: space-evenly;
+  grid-area: contact;
+  }
+
+  #phone {
+    display: grid;
+  }
+
+  #light {
+    display: grid;
+  }
+
+
+#name {
+grid-area: name;
+justify-content: right;
+justify-self: start;
+background-color: lightgray;
+
+}
+
+#occupation {
+  display: flex;
+grid-area: occupation;
+flex-direction: column;
+background-color: lightgrey;
+justify-self: start;
+}
+
+#brand {
+display: flex;
+grid-area: brand;
+text-align: left;
+justify-self: start;
+background-color: lightgrey;
+}
+
+#offer {
+grid-area: offer;
+justify-self: start;
+background-color: lightgray;
+}
+
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+  body {
+    display: grid;
+    background-color: gray;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* Use a system font, if none are available use an available sans-sarif font */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  }
+
   main {
     display: grid;
     /* tablet - two column display */
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 10px auto 50px 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 50px;
+    background-color: whitesmoke;
     grid-template-areas: 
     "header"
     "content"
     "footer"
     "aside";
   }
+
+  img {
+    display: grid;
+    border-radius: 50%;
+    justify-content: center;
+    border: solid;
+    border-color: green;
+  }
+
+  #name {
+    display: flex;
+    grid-area: "content";
+    }
+
+  #occupation {
+    display: flex;
+    background-color: lightgrey;
+    grid-area: "content";
+    }
+    
+    #brand {
+    display: none;
+    grid-area: "content";
+    }
+    
+    #offer {
+    display: flex;
+    grid-area: "aside";
+    }
+    
+    #contact {
+    display: flex;
+    background-color: green;
+    grid-area: "footer";
+    justify-content: space-evenly;
+    }
 }
 
