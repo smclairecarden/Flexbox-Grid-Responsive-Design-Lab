@@ -1,3 +1,6 @@
+
+/* I'm really sorry for the two media queries. I realize I dont need two, but just couldnt find a way to make my code work without both of them in there for some reason. I know I only need the one - I will do better next time and am totally willing to retry this one and turn it in again. */
+
 html {
   box-sizing: border-box
 }
@@ -33,6 +36,7 @@ html {
 
   main {
     display: grid;
+    max-width: 200px;
     /* tablet - two column display */
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto 50px;
@@ -88,9 +92,11 @@ html {
 @media only screen and (min-width: 768px) {
 
   body {
-    display: grid;
+    display: flex;
     background-color: gray;
     min-height: 100vh;
+    justify-content: center;
+    align-items: center;
     /* Use a system font, if none are available use an available sans-sarif font */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -102,10 +108,8 @@ html {
     display: grid;
     text-align: center;
     background-color: whitesmoke;
-    min-width: 100vh;
+    /* max-width: 400px; */
     font-size: 2.4rem;
-    flex-direction: column;
-    height: 100%;
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -179,9 +183,9 @@ html {
   justify-self: start;
   }
   
-  #name, #occupation, #brand, #offer {
+  /* #name, #occupation, #brand, #offer {
     padding-left: 20px;
     background-color: lightgray;
-  }
+  } */
   
   }
