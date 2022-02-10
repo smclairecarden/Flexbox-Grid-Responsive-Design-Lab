@@ -18,102 +18,6 @@ html {
   font-size: 62.5%;
 }
 
-@media only screen and (min-width: 600px) {
-
-body {
-  display: grid;
-  background-color: gray;
-  min-height: 100vh;
-  /* Use a system font, if none are available use an available sans-sarif font */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-
-
-main {
-  display: grid;
-  text-align: center;
-  background-color: whitesmoke;
-  min-width: 100vh;
-  font-size: 2.4rem;
-  flex-direction: column;
-  height: 100%;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas:
-  "status name"
-  "img occupation"
-  "img brand"
-  "contact offer"
-}
-
-img {
-grid-area: img;
-margin-left: auto;
-margin-right: auto;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-border: solid;
-border-color: green;
-width: 100%;
-}
-
-#contact {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  background-color: green;
-  flex-direction: row;
-  justify-content: space-evenly;
-  grid-area: contact;
-  }
-
-  #phone {
-    display: grid;
-  }
-
-  #light {
-    display: grid;
-  }
-
-
-#name {
-grid-area: name;
-justify-content: right;
-justify-self: start;
-background-color: lightgray;
-
-}
-
-#occupation {
-  display: flex;
-grid-area: occupation;
-flex-direction: column;
-background-color: lightgrey;
-justify-self: start;
-}
-
-#brand {
-display: flex;
-grid-area: brand;
-text-align: left;
-justify-self: start;
-background-color: lightgrey;
-}
-
-#offer {
-grid-area: offer;
-justify-self: start;
-background-color: lightgray;
-}
-
-}
-
 
 @media only screen and (max-width: 768px) {
   body {
@@ -140,10 +44,14 @@ background-color: lightgray;
     "aside";
   }
 
+  #status {
+    text-align: right;
+  }
+
   img {
     display: grid;
     border-radius: 50%;
-    justify-content: center;
+    margin: 0 auto;
     border: solid;
     border-color: green;
   }
@@ -177,3 +85,103 @@ background-color: lightgray;
     }
 }
 
+@media only screen and (min-width: 768px) {
+
+  body {
+    display: grid;
+    background-color: gray;
+    min-height: 100vh;
+    /* Use a system font, if none are available use an available sans-sarif font */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  }
+  
+  
+  
+  main {
+    display: grid;
+    text-align: center;
+    background-color: whitesmoke;
+    min-width: 100vh;
+    font-size: 2.4rem;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "status name"
+    "img occupation"
+    "img brand"
+    "contact offer"
+  }
+
+  #status {
+    text-align: left;
+  }
+  
+  img {
+  grid-area: img;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid;
+  border-color: green;
+  width: 100%;
+  }
+  
+  #contact {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: green;
+    flex-direction: row;
+    justify-content: space-evenly;
+    grid-area: contact;
+    }
+  
+    #phone {
+      display: grid;
+    }
+  
+    #light {
+      display: grid;
+    }
+  
+  
+  #name {
+  grid-area: name;
+  justify-content: right;
+  justify-self: start;
+  
+  }
+  
+  #occupation {
+    display: flex;
+  grid-area: occupation;
+  flex-direction: column;
+  justify-self: start;
+  }
+  
+  #brand {
+  display: flex;
+  grid-area: brand;
+  text-align: left;
+  justify-self: start;
+  }
+  
+  #offer {
+  grid-area: offer;
+  justify-self: start;
+  }
+  
+  #name, #occupation, #brand, #offer {
+    padding-left: 20px;
+    background-color: lightgray;
+  }
+  
+  }
